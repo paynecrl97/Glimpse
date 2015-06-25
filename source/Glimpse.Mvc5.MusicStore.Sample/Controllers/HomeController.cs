@@ -6,6 +6,7 @@ using System.Data.Common;
 using System.Data.Entity;
 using System.Diagnostics;
 using System.Linq;
+using System.Net;
 using System.Threading.Tasks;
 using System.Web.Mvc;
 using MvcMusicStore.Models;
@@ -27,6 +28,8 @@ namespace MvcMusicStore.Controllers
             // Trigger some good old ADO code 
             var albumCount = GetTotalAlbumns(); 
             Trace.Write(string.Format("Total number of Albums = {0} and Albums with 'The' = {1}", albumCount.Item1, albumCount.Item2));
+
+            GetGoogle();
 
             return View(albums);
         }
@@ -71,6 +74,12 @@ namespace MvcMusicStore.Controllers
             }
 
             return new Tuple<int, int>(result1, result2);
+        }
+
+        private void GetGoogle()
+        {
+            var client = new WebClient();
+            client.DownloadString("http://www.google.com");
         }
 
         protected override void Dispose(bool disposing)

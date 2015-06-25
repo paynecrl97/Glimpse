@@ -108,6 +108,7 @@
     <Reference Include="System.Web.Mvc, Version=5.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\packages\Microsoft.AspNet.Mvc.5.1.1\lib\net45\System.Web.Mvc.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -290,6 +291,10 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Glimpse.ExternalRequests\Glimpse.ExternalRequests.csproj">
+      <Project>{c9e8f6aa-d06e-42e4-92eb-0d7bfde1ba0b}</Project>
+      <Name>Glimpse.ExternalRequests</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Glimpse.Ado.Net45\Glimpse.Ado.Net45.csproj">
       <Project>{1594add8-62f8-417b-bd69-131afbbf51bc}</Project>
       <Name>Glimpse.Ado.Net45</Name>
